@@ -3,7 +3,7 @@
 	extern	_malloc
 	extern	_ft_strcpy
 
-ft_strdup:
+_ft_strdup:
 
 	cmp     rdi, byte 0
 	jz	    _return_err
