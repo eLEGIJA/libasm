@@ -2,6 +2,8 @@
 	global	_ft_write
 
 _ft_write:
+	test	edi, edi
+	js		_error	
 
 	mov		r8, rdx
 	mov		ax, 0x2000004
