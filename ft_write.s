@@ -1,25 +1,20 @@
-	segment	.text
-	global	_ft_write
+	extern	__errno_location
+	section	.text
+	global	ft_write
 
-_ft_write:
-	test	edi, edi
-	js		_error	
+ft_write:
 
-	mov		r8, rdx
-	mov		ax, 0x2000004
-    syscall
-
-	jc		_error
-
-	jmp		_exit
-
+	mov rax, 1
+	syscall
+    cmp		rax, 0
+	jl		_error
+	ret
+ 
 _error:
 
+	neg		rax
+	mov		rdi,rax
+	call	__errno_location
+	mov		[rax], rdi
 	mov		rax, -1
 	ret
-
-_exit:
-
-	mov		rax, r8
-	ret
-	
