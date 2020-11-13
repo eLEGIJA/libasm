@@ -77,15 +77,6 @@ void check_strcpy()
 	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(buffer, alphabet));
 	clear_buffer(buffer, 30);
 	printf("\n");
-
-	// ------- NULL = SEGFAULT
-	// printf("%-20s: \"%s\"\n", "char []", alphabet);
-	// printf("%-20s: buffer[50]\n", "copy to");
-	// printf("%-20s: \"%s\"\n", "libc", strcpy(NULL, NULL));	
-	// clear_buffer(buffer, 30);
-	// printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(NULL, NULL));
-	// clear_buffer(buffer, 30);
-	// printf("\n");
 }
 
 void check_strcmp()
@@ -113,13 +104,6 @@ void check_strcmp()
 	printf("%-20s: \"%d\"\n", "libc", strcmp(hello_world2, empty));
 	printf("%-20s: \"%d\"\n", "libasm", ft_strcmp(hello_world2, empty));
 	printf("\n");
-
-	// ------- NULL = SEGFAULT
-	// printf("%-20s: \"%s\"\n", "char *", hello_world2);
-	// printf("%-20s: %s\n", "compared to", "NULL");
-	// printf("%-20s: \"%d\"\n", "libc", strcmp(NULL, hello_world2));
-	// printf("%-20s: \"%d\"\n", "libasm", ft_strcmp(NULL, empty));
-	// printf("\n");
 }
 
 void check_write()
@@ -132,19 +116,15 @@ void check_write()
 	printf("================================\n\n");
 	printf("%-20s: \"%s\"\n", "char *", hello_world);
 	printf("%-20s: \"Libc:%lu\"\n", "libc", write(1, hello_world, 7));
-	// printf("\n");
 	printf("%-20s: \"Libasm:%d\"\n", "libasm", ft_write(1, hello_world, 7));
 	printf("\n");
 	printf("%-20s: \"%s\"\n", "char *", empty);
 	printf("%-20s: \"Libc:%zd\"\n", "libc", write(1, empty, 0));
-	// printf("\n");
 	printf("%-20s: \"Libasm:%d\"\n", "libasm", ft_write(1, empty, 0));
 	printf("\n");
 	printf("%-20s: \"%s\"\n", "char *", hello_world);
 	printf("%-20s: \"Libc:%zd\"\n", "libc", write(-7, NULL, 7));
-	// printf("\n");
 	printf("%-20s: \"Libasm:%d\"\n", "libasm", ft_write(-7, NULL, 7));
-	// printf("\n");
 	
 }
 
