@@ -36,13 +36,6 @@ void check_strlen()
 	printf("%-20s: %lu\n", "libc", strlen(alphabet));	
 	printf("%-20s: %d\n", "libasm", ft_strlen(alphabet));
 	printf("\n");
-	
-	// ------- NULL = SEGFAULT
-	// printf("%-20s: \"%s\"\n", "char *", alphabet);
-	// printf("%-20s: 0\n", "expected lenght");
-	// printf("%-20s: %zu\n", "libc", strlen(NULL));	
-	// printf("%-20s: %zu\n", "libasm", ft_strlen(NULL));
-	// printf("\n");
 }
 
 void clear_buffer(char *buffer, int size)
